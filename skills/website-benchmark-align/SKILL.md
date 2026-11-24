@@ -1,33 +1,28 @@
 ---
 name: website-benchmark-align
-description: Use when aligning on a website's structure, redesign, or "done" bar against a benchmark site—or when the user casually asks to analyze a website, compare against a competitor, check pages/layouts/components/user journey/conversion, or recalls "that website analysis framework" before writing code.
+description: Use this skill when aligning a website's architecture, redesign, or "done" bar against a benchmark site—including requests to compare against a competitor, audit conversion gaps, or apply top-down UX alignment (Garrett's 5 Planes + Atomic Design) before coding.
 ---
 
-# Website Benchmark Alignment (4-Layer Intent-Based)
+# Website Benchmark Alignment
 
-## Purpose
-Align on what "done" means for a website—and where real conversion gaps sit relative to a benchmark site—**before writing any code**.
+Align on what "done" means for a website—and isolate true conversion gaps against a benchmark—before writing any code.
 
-## Core Rules
-1. **Read-only until aligned**: Never edit application code, open PRs, or deploy during alignment.
-2. **Reuse before crawling**: Inspect existing repo routes, docs, and prior benchmark notes first. Check the live benchmark site only with targeted, low-cost lookups for missing or potentially stale facts.
-3. **Conversion over imitation**: Judge gaps by the site's own business intent, not raw page count. Explicitly separate true conversion gaps from bloat that only exists because the benchmark serves broader categories.
-4. **No fabricated evidence**: Ground page counts, routes, and gap claims in verified files or live checks.
+## Guardrails
+- **Read-only until aligned**: No code edits, PRs, or deploys during alignment.
+- **Reuse before crawling**: Audit existing repo routes, docs, and prior notes first; run only targeted, low-cost live checks for missing or stale facts.
+- **Conversion over imitation**: Judge every gap by this site's business intent, never raw page count. Explicitly separate real conversion gaps from benchmark bloat (e.g., extra product categories or SEO location pages).
+- **Verified facts only**: Ground every page count, route, and gap in verified files or live checks; label what was checked today, reused, or unverified.
 
-## Intent-Based 4-Layer Framework (Top-Down)
-Always analyze and explain in this order, starting from visitor intent:
-1. **User Journey (Top)**: Core visitor intent to conversion (e.g., discover product -> build trust -> estimate price -> request sample/quote/checkout). Measure click depth, friction, and drop-off points.
-2. **Pages**: Complete page inventory (exact count, URLs, purpose, CMS coverage) mapped to distinct visitor intents vs. the benchmark's page architecture.
-3. **Layouts**: Page skeleton, above-the-fold hierarchy, mobile/desktop CTA reachability, and information flow.
-4. **Components (Base)**: Reusable UI building blocks (selectors, calculators, galleries, forms, trust modules) and how cleanly they map to CMS fields.
+## 4-Layer Top-Down Framework
+Apply **Jesse James Garrett's Five Planes of UX** (Strategy → Scope → Structure → Skeleton → Surface) + **Brad Frost's Atomic Design** in strict top-down order:
+1. **User Journey (Strategy & Structure)**: Core visitor intent to conversion (discover → trust → price/estimate → sample/quote/checkout); measure click depth and drop-off friction.
+2. **Pages (Scope & Structure)**: Full page inventory (exact count, URLs, visitor intent, CMS coverage) vs. benchmark page architecture.
+3. **Layouts (Skeleton)**: Above-the-fold hierarchy, scan flow, and desktop/mobile CTA reachability.
+4. **Components (Surface & Atomic Design)**: Reusable UI modules (selectors, calculators, galleries, forms, trust blocks) and their CMS field mapping.
 
 ## Deliverables
-1. **Concise Intent Summary**: Direct verdict against the user's "done" bar, exact page count, what already beats the benchmark, true conversion gaps, and benchmark elements intentionally skipped.
-2. **Standalone HTML Comparison Page**: Single self-contained HTML file (inline styles/SVG journey diagram + real screenshots when available) comparing both sites side by side across the 4 layers, plus a prioritized gap table (recommendations only, no code changes).
+1. **Concise Summary**: Direct verdict on the user's "done" bar, exact page count, what already beats the benchmark, prioritized conversion gaps, and benchmark items intentionally skipped.
+2. **Standalone Offline HTML Comparison**: One self-contained HTML file (inline CSS, SVG journey diagram, embedded real screenshots) comparing both sites across the 4 layers plus a prioritized gap table.
 
 ## Handoff: Planning with Files
-Once the user reviews the comparison and confirms the target bar, lock the agreement into project planning files (`task_plan.md`, `findings.md`, `progress.md`):
-- Explicit "done" criteria and checkable acceptance items
-- In-scope pages, layouts, components, and conversion features
-- Explicit non-goals / deferred items
-- Ordered phases; implementation starts only after this plan is approved, and every task updates progress until all boxes are checked.
+After the user approves the comparison and target bar, lock the agreed scope into `task_plan.md`, `findings.md`, and `progress.md` (done criteria, in-scope items, explicit non-goals, ordered phases). Start implementation only after that plan is approved.

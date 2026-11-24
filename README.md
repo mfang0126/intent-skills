@@ -1,26 +1,28 @@
 # intent-skills
 
-Minimalist, intent-based, token-efficient [Agent Skills](https://agentskills.io/) designed for reuse across AI coding and assistant workflows (Claude Code, Codex, Pi, Cursor, and other SKILL.md-compatible agents).
+Minimalist, intent-based, token-efficient [Agent Skills](https://agentskills.io/specification) built for reuse across AI coding and assistant tools (Claude Code, Codex, Pi, Cursor, Grok Bot, and any `SKILL.md`-compatible agent).
 
-## Philosophy
+## Standard & Authoring Rules
 
-- **Intent first**: Start from the user and business outcome, then work top-down to structure, layouts, and implementation details.
-- **Minimal and token-efficient**: Keep each skill short, self-contained, and focused on decision rules rather than bloated playbooks.
-- **Project-agnostic**: Every skill is stripped of project-specific paths, client details, and tool lock-in so it drops cleanly into any repository or agent library.
-- **Evidence before code**: Align on scope, "done" criteria, and verified facts before writing code.
+- **Open Standard**: Follows the [Agent Skills Specification](https://agentskills.io/specification) with **Progressive Disclosure** — agents read only `name` and `description` upfront, load `SKILL.md` when user intent matches, and pull optional `references/` only on demand.
+- **Iron Rule**: Write only the constraints a strong model does not already know and would get wrong without them. Name established methodologies directly (e.g., Garrett's Five Planes of UX, Brad Frost's Atomic Design) instead of repeating textbook explanations.
+- **Project-Agnostic**: Zero personal details, client references, or repo-specific paths. Keep each `SKILL.md` concise (~30–50 lines) and immediately portable.
 
 ## Skills Catalog
 
 | Skill | Path | When to use |
 | --- | --- | --- |
-| `website-benchmark-align` | [`skills/website-benchmark-align/SKILL.md`](skills/website-benchmark-align/SKILL.md) | Align on a website's structure, redesign, or "done" bar against a benchmark site across 4 layers (User Journey, Pages, Layouts, Components) before writing code. |
+| `website-benchmark-align` | [`skills/website-benchmark-align/SKILL.md`](skills/website-benchmark-align/SKILL.md) | Align on a website's architecture, redesign, or "done" bar against a benchmark site (Garrett's 5 Planes + Atomic Design) before writing code. |
 
-## Usage
+## Quick Install
 
-Each skill lives under `skills/<skill-name>/SKILL.md` with standard YAML frontmatter (`name`, `description`):
+One-liner copy into your agent's skills directory (example for Claude Code / Codex):
 
-- **Agent skill managers (e.g. Magpie)**: Add `mfang0126/intent-skills` as a GitHub skill source and enable the desired skill(s) for your agents.
-- **Manual / local install**: Copy `skills/<skill-name>/` into your agent's skills directory (for example `~/.agents/skills/<skill-name>/` or `.claude/skills/<skill-name>/`).
+```bash
+git clone --depth 1 https://github.com/mfang0126/intent-skills.git /tmp/intent-skills && cp -R /tmp/intent-skills/skills/website-benchmark-align ~/.claude/skills/
+```
+
+Or manage and sync across Claude Code, Codex, Pi, and other agents via **Magpie** by adding `mfang0126/intent-skills` as a GitHub skill source and running `magpie library skill update website-benchmark-align && magpie library sync`.
 
 ## License
 
