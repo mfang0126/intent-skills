@@ -13,9 +13,9 @@ Minimalist, intent-based, token-efficient [Agent Skills](https://agentskills.io/
 | Skill | Path | When to use |
 | --- | --- | --- |
 | `website-benchmark-align` | [`skills/website-benchmark-align/SKILL.md`](skills/website-benchmark-align/SKILL.md) | Align on a website's architecture, redesign, or "done" bar against a benchmark site (Garrett's 5 Planes + Atomic Design) before writing code. |
-| `intent-drift-guard` | [`skills/intent-drift-guard/SKILL.md`](skills/intent-drift-guard/SKILL.md) | Run multi-step or parallel agent projects without scope drift, context loss or reverted decisions: repo-resident planning/ADR files plus an independent conformance gate, plus an outcome-first, one-decision-per-ask handoff protocol. |
+| `intent-drift-guard` | [`skills/intent-drift-guard/SKILL.md`](skills/intent-drift-guard/SKILL.md) | Run multi-step or parallel agent projects without scope drift, context loss or reverted decisions: repo-resident planning/ADR files plus an independent conformance gate, plus an outcome-first, one-decision-per-ask handoff protocol. *(Superseded for process by `project-collab-method`; kept for reference.)* |
 | `prior-art-problem-loop` | [`skills/prior-art-problem-loop/SKILL.md`](skills/prior-art-problem-loop/SKILL.md) | Research a new topic, diagnose a workflow bottleneck or evaluate a design idea: benchmark prior art, blunt MECE check, goal-aligned logic tree. |
-| `project-collab-method` | [`skills/project-collab-method/SKILL.md`](skills/project-collab-method/SKILL.md) | Start or onboard a project, dispatch or accept work, or report results across multiple agents: one owner per document, fixed handoff order, hard pass gate, conflicts to the human first, owning agent reports directly. |
+| `project-collab-method` | [`skills/project-collab-method/SKILL.md`](skills/project-collab-method/SKILL.md) | **Single process source** for multi-agent projects: nine fixed rules, risk tiers R0–R3 that set review depth, evidence, model and decision defaults, one project brief as sole entry, explore-then-build for subjective work, ask-once decision ledger. |
 
 ## Quick Install
 

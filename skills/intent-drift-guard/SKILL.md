@@ -2,8 +2,9 @@
 name: intent-drift-guard
 description: Use this when running multi-step or parallel agent projects to prevent scope drift, context loss, or reverted decisions by pairing repo-resident planning/ADR files with an independent conformance gate and an outcome-first handoff protocol.
 ---
-
 # Intent Drift Guard
+
+> **Superseded for process (2026-11-25):** the single process source is [`project-collab-method`](../project-collab-method/SKILL.md). Kept for reference; where they differ, `project-collab-method` wins.
 
 Prevent multi-step or multi-workstream agent projects from drifting off goal, losing context, or reverting settled decisions.
 
