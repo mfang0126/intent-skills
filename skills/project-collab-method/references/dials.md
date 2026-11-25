@@ -33,7 +33,7 @@
 
 ## Decision defaults
 - A rule-1 red-line item is always R3. It never proceeds by default, by silence, or at a deadline, even if it was first labelled R0, R1 or R2.
-- R0/R1 (and only those): at the deadline with no objection, apply the recommendation and report after.
+- R0/R1 (and only those): at the deadline with no objection, the PO first re-checks the recommendation against rule 1. Any red-line component is reclassified R3 and is not applied. Only then may the recommendation be applied, with a report after.
 - R2: at the deadline, remind once, then park as "known to human, deferred". Never auto-apply.
 - R3: never auto-apply, never treat silence as yes, never proceed at a deadline. Remind once, then park as "known to human, deferred". Do not re-push it as the top blocker without new information.
 
