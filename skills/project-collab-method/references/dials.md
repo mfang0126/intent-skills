@@ -11,7 +11,7 @@
 | Card size / appetite | Card shaper | Tier default; after two reworks, split or return to Explore |
 | WIP | Coordinator | Default 3–4; stop dispatching when acceptance backlog exceeds 2 |
 | Report cadence | Owner | Hand-in plus a daily digest; R3 and blockers immediately |
-| Decision deadline | PO | Every ledger entry that is still open has a recommendation and a deadline; only the most blocking one sits in the brief |
+| Decision deadline | PO | Every ledger entry that is still open has a recommendation and a deadline (default 48 h, 24 h for R3); only the most blocking one sits in the brief |
 | Human touchpoints | PO proposes, human sets | Direction picks and red-line actions only, unless the human asks for more |
 
 ## Evidence by change type
@@ -23,6 +23,7 @@
 | CMS / content model | Admin screenshots plus one real save and read-back in the approved mode |
 | Generated artefact | The artefact itself (file, payload, export), not only a picture of it |
 | Numbers for a client | Definition, query or script, and timestamp. Re-run every doc that cites the number when its definition changes |
+| Docs / report | File path, plus source links or the command output behind each claim |
 | Code | Diff, test run and the cross-vendor verdict (defects plus brief conformance) |
 
 ## Model notes
@@ -35,7 +36,7 @@
 - R2/R3: at the deadline, remind once, then park as "known to human, deferred". Never auto-apply it, and never re-push it as the top blocker without new information.
 
 ## Decision ledger row
-`ID | date | verbatim quote | message id | scope | supersedes | status | recommendation | deadline`
+`ID | date | verbatim quote | message id (or date if none) | scope | supersedes | status | recommendation | deadline`
 
 There is one ledger per project, kept in the repo. Other files link to it and never copy it.
 
@@ -46,7 +47,7 @@ The brief is the only entry file. Everything else is linked from it and never re
 - `docs/planning/progress.md`: per-card status with evidence paths.
 - `docs/planning/lessons.md`: one row per failure, with an occurrence count.
 - `docs/design/quality-standard.md` (UI projects): benchmark breakdown, visual red lines, reference images and the screenshot template.
-- `AGENTS.md`: a router to the files above plus the worker-facing fixed rules. A card reads `AGENTS.md`, then the brief.
+- `AGENTS.md`: a router only. It links the files above and the `project-collab-method` skill, and holds project-specific gate lines only. It never copies the fixed rules. A card reads `AGENTS.md`, then the brief.
 
 Knowledge docs that are not about development go to the knowledge base, not the repo.
 
