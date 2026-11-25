@@ -12,6 +12,8 @@ Align on what "done" means for a website—and isolate true conversion gaps agai
 - **Reuse before crawling**: Audit existing repo routes, docs, and prior notes first; run only targeted, low-cost live checks for missing or stale facts.
 - **Conversion over imitation**: Judge every gap by this site's business intent, never raw page count. Explicitly separate real conversion gaps from benchmark bloat (e.g., extra product categories or SEO location pages).
 - **Verified facts only**: Ground every page count, route, and gap in verified files or live checks; label what was checked today, reused, or unverified.
+- **Locked journey survives redesigns**: Before a later layout or component change removes a CTA, block, or step, re-check it against the agreed journey and done bar; dropping one needs an explicit, approved decision.
+- **Eyes over linters**: A clean anti-pattern or lint scan is a floor, not a visual pass; judge real full-page screenshots at desktop and mobile widths before calling a page done.
 
 ## 4-Layer Top-Down Framework
 Apply **Jesse James Garrett's Five Planes of UX** (Strategy → Scope → Structure → Skeleton → Surface) + **Brad Frost's Atomic Design** in strict top-down order:

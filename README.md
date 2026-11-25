@@ -13,7 +13,7 @@ Minimalist, intent-based, token-efficient [Agent Skills](https://agentskills.io/
 | Skill | Path | When to use |
 | --- | --- | --- |
 | `website-benchmark-align` | [`skills/website-benchmark-align/SKILL.md`](skills/website-benchmark-align/SKILL.md) | Align on a website's architecture, redesign, or "done" bar against a benchmark site (Garrett's 5 Planes + Atomic Design) before writing code. |
-| `intent-drift-guard` | [`skills/intent-drift-guard/SKILL.md`](skills/intent-drift-guard/SKILL.md) | Run multi-step or parallel agent projects without scope drift, context loss or reverted decisions: repo-resident planning/ADR files plus an independent conformance gate. |
+| `intent-drift-guard` | [`skills/intent-drift-guard/SKILL.md`](skills/intent-drift-guard/SKILL.md) | Run multi-step or parallel agent projects without scope drift, context loss or reverted decisions: repo-resident planning/ADR files plus an independent conformance gate, plus an outcome-first, one-decision-per-ask handoff protocol. |
 | `prior-art-problem-loop` | [`skills/prior-art-problem-loop/SKILL.md`](skills/prior-art-problem-loop/SKILL.md) | Research a new topic, diagnose a workflow bottleneck or evaluate a design idea: benchmark prior art, blunt MECE check, goal-aligned logic tree. |
 
 ## Quick Install
