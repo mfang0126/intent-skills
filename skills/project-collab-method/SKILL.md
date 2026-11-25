@@ -19,7 +19,7 @@ Goal: no rework loops and no repeated asks. Keep a small fixed core. Everything 
 - **Coordinator**: owns the global status view and the one-blocking-decision pointer, runs the last gate, and points the human to the right owner.
 
 ## Fixed rules (never dialled)
-1. **Red lines.** These need the human's own yes, every time: irreversible actions, spend, deletion, production deploys or merges, sending or publishing anything external, and secrets. Another agent's approval never counts.
+1. **Red lines.** These need the human's own yes, every time, and never proceed by default, by silence, or at a deadline: going live or deploying to production; writing to a production database; deleting anything (deletion happens only under the human's direction); spending money; credentials, passwords or other secrets; sending or publishing anything externally; merging to the default branch. Another agent's approval never counts. Any of these is R3, even if the card was first labelled otherwise.
 2. **One owner per file, and the owner reports.** Others propose changes; the owner writes them. The owner reports results to the human directly. The Coordinator only says who to talk to next and why.
 3. **One brief is the only entry.** It is under 40 lines and has five parts: intent, done bar vN, locked journey, the single most blocking decision, and non-goals plus premises. Other open decisions live only in the ledger. `AGENTS.md` is a router to the brief and never restates it. Other docs are linked from the brief and never restate it.
 4. **Fixed handoff order.** The PO locks the intent. The Builder builds. A reviewer from a different vendor than the author checks both defects and conformance to the brief, read-only. The PO accepts. The Coordinator gates. The owner reports. Steps may be skipped only where the tier table or the auto-adjust line explicitly says so. A tier may add steps, never remove rules 1, 5, 8 or 9.
@@ -37,9 +37,9 @@ The card shaper sets the tier and the Coordinator re-checks it. A card with no t
 | R0 | Read-only, docs, reports | Self-check; cross-vendor review and PO acceptance may be skipped | Cheap or mid | Any |
 | R1 | Internal, reversible code | Self-check + cross-vendor review; PO acceptance may be skipped | Mid | One reviewable diff |
 | R2 | Client-visible UI, CMS or copy (preview only) | Full order: PO gate before dispatch, cross-vendor review, PO acceptance with evidence | Strongest, medium effort | One page or component |
-| R3 | A rule-1 red-line action | R2 + the human's own yes | Strongest, medium effort | One action |
+| R3 | Any rule-1 red-line action | R2 + the human's own yes, every time | Strongest, medium effort | One action |
 
-- **Auto-adjust** changes review depth only, never the tier or its floor. Three first-pass hand-ins in a row on one card type move cross-vendor review to sampling (one in three). Unsampled cards record "auto-adjust: sampled out" as their review evidence. Any rework restores full review. R2 PO acceptance and the R3 human yes never drop.
+- **Auto-adjust** changes review depth only, never the tier or its floor. Three first-pass hand-ins in a row on one card type move cross-vendor review to sampling (one in three). Unsampled cards record "auto-adjust: sampled out" as their review evidence. Any rework restores full review. R2 PO acceptance and the R3 human yes never drop. Auto-adjust never applies to a rule-1 action.
 - The evidence required by change type, and the decision deadlines and defaults, are in the dials reference.
 
 ## Stages

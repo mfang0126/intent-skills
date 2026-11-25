@@ -11,7 +11,7 @@
 | Card size / appetite | Card shaper | Tier default; after two reworks, split or return to Explore |
 | WIP | Coordinator | Default 3–4; stop dispatching when acceptance backlog exceeds 2 |
 | Report cadence | Owner | Hand-in plus a daily digest; R3 and blockers immediately |
-| Decision deadline | PO | Every ledger entry that is still open has a recommendation and a deadline (default 48 h, 24 h for R3); only the most blocking one sits in the brief |
+| Decision deadline | PO | Every ledger entry that is still open has a recommendation and a reminder deadline (default 48 h, 24 h for R3). A deadline never authorises a red-line action. Only the most blocking decision sits in the brief |
 | Human touchpoints | PO proposes, human sets | Direction picks and red-line actions only, unless the human asks for more |
 
 ## Evidence by change type
@@ -32,8 +32,10 @@
 - The reviewer always comes from a different vendor than the author.
 
 ## Decision defaults
-- R0/R1: at the deadline with no objection, apply the recommendation and report after.
-- R2/R3: at the deadline, remind once, then park as "known to human, deferred". Never auto-apply it, and never re-push it as the top blocker without new information.
+- A rule-1 red-line item is always R3. It never proceeds by default, by silence, or at a deadline, even if it was first labelled R0, R1 or R2.
+- R0/R1 (and only those): at the deadline with no objection, apply the recommendation and report after.
+- R2: at the deadline, remind once, then park as "known to human, deferred". Never auto-apply.
+- R3: never auto-apply, never treat silence as yes, never proceed at a deadline. Remind once, then park as "known to human, deferred". Do not re-push it as the top blocker without new information.
 
 ## Decision ledger row
 `ID | date | verbatim quote | message id (or date if none) | scope | supersedes | status | recommendation | deadline`
