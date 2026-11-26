@@ -53,3 +53,4 @@ The card shaper sets the tier and the Coordinator re-checks it. A card with no t
 - A prohibition becomes a required card field, a script check or a gate line. Chat does not count.
 - Log each failure in `docs/planning/lessons.md` with a count. At two occurrences it becomes a candidate. After three real deliveries (Rule of Three), promote it and regression-test it against the original failure.
 - When a rule is added, retire or merge an older one. Superseded docs get a banner and are never deleted.
+- L2/L3 anti-mistake rules, conditional card fields by `card_type`, and mechanical gate/acceptance scripts live in `playbook/dispatch-handbook.md` (§开发改动防错机制) and `templates/card-template.md`; do not duplicate them here.
