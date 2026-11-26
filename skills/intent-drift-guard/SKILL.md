@@ -33,6 +33,7 @@ Combines **Docs-as-Code SSOT**, **ADR (Architecture Decision Records)**, **Spec-
    - Did the output satisfy the measurable "done" bar with verified evidence? A proxy (lint clean, tests green, file exists) is not a pass for a judgment criterion.
    - Did it stay strictly outside `Non-Goals` and honor every locked ADR?
    - Were `progress.md` and `decisions.md` updated in the same change before reporting done?
+   - Dispatch/acceptance anti-mistake rules, conditional card fields by `card_type`, and gate scripts (`orca-card-gate`, `orca-accept-check`) live in `playbook/dispatch-handbook.md` (§开发改动防错机制) and `templates/card-template.md`.
 
 ## Handoff Protocol
 - **Outcome first**: Every handoff opens with the result against the done bar, then current state, then next step; process narrative only on request.
